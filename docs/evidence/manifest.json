@@ -465,7 +465,7 @@
     "src/verimorph/language.py": "834bc95cfeec51d090415fff8467558b772387a5a217e8e5051544aeaef02dc1",
     "src/verimorph/mutation.py": "8d0156271240feba2ad3302713605142b9acf4dd3d7b7abff7d2825a88a42066",
     "src/verimorph/oracle.py": "3f99a3bd213dbd5942a9106d31eec3e6c5a901f287e3a60401527d5100010b63",
-    "src/verimorph/provenance.py": "c550e428a7ef4753c4f2e385485bb8ab538ee516c82a5da42af8a4b52edce219",
+    "src/verimorph/provenance.py": "c22066d20ce2a60aa1f9097ade434318a82a3b36d0c86d03a167e8a024cfb1a1",
     "src/verimorph/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "src/verimorph/replay.py": "69900e0eaa0fe4f2b031fdad878165982a93d90d1dcf08b898f10b3281e6b0f8",
     "src/verimorph/runtime.py": "048c97ef228af1d68ab280baccef7486b3a5908d7578642d84b316cea142d9fb",
@@ -476,7 +476,7 @@
     "tests/test_cli.py": "89d44ec2fc94265371f20e4842e306e66e82ea896315f4978f4a4fc17e45fae8",
     "tests/test_history.py": "d3ca4d9e6c15b6c7075374c3c4d95601e41a46f0e378635e218fae4d87105068",
     "tests/test_language.py": "40169c390e19bc18a4a515ba7987c4ee6064c8ff5115ba6d91c7f70f416501f9",
-    "tests/test_replay.py": "1c6c898931792579233165b57ebb30b29d90d375ba317b593ce98f6235560b83",
+    "tests/test_replay.py": "04a4ddc958800c759667f810344c5ae38c6ef463702e7f0a077fae1020e9f6ab",
     "tests/test_transaction.py": "ac68db1e694be889cbab19a7d4a864acecca5080f4bd6332dfd5f1bc5bb893ca"
   },
   "format": "verimorph-evidence-1",
