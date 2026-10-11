@@ -141,6 +141,18 @@ def test_truncated_history_and_exclusive_create(tmp_path):
     with pytest.raises(FileExistsError):
         Ledger(path)
 
+    # The writer and reader must enforce the same per-event bound. A maximum-shape
+    # Oracle is valid configuration but can make the header exceed that bound; fail
+    # before writing an evidence file that replay would later reject.
+    oversize_path = tmp_path / "oversize.jsonl"
+    output = (2**63 - 1,) * 256
+    oracle = Oracle(tuple(Case(expected_output=output) for _ in range(64)))
+    oversized = Kernel(SOURCE, oracle=oracle, ledger=Ledger(oversize_path))
+    with pytest.raises(VeriMorphError, match="event too large"):
+        oversized.search(0)
+    oversized.ledger.close()
+    assert oversize_path.read_text() == ""
+
 
 def test_rng_known_vector():
     rng = RNG(0)
