@@ -86,5 +86,16 @@
     "reproducer": "nested EVOLVE, recursive replay and runtime CLI tests",
     "reverification": "strict mypy and full 146-test suite",
     "status": "VERIFIED"
+  },
+  {
+    "id": "F9",
+    "severity": "MEDIUM",
+    "phase": "VERIFY",
+    "failure": "Windows CI reported 145 passed and 2 setup/teardown errors; oversized source fixture could not reach assertion",
+    "cause": "pytest embedded full 65537-character parameter into PYTEST_CURRENT_TEST; Windows limits environment values to 32767",
+    "repair": "Assign compact descriptive parametrization IDs; retain exact oversized input and rejection assertion",
+    "reproducer": "Actions run 38132063927 job 114448267118",
+    "reverification": "local full suite and corrected five-lane CI",
+    "status": "PARTIAL until corrected CI observed"
   }
 ]

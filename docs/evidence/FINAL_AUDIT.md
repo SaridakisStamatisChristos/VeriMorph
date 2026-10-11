@@ -19,6 +19,7 @@ workflow commands, and documentation assertions.
   independent fault-injected path verifies sticky accounting after host stack failure.
 - MEDIUM: signed numeric canonicalization needed stable negative literal nodes.
   Fixed; generated arithmetic/roundtrip and MIN_INT tests verify behavior.
+- MEDIUM: Windows oversized fixture ID exceeded OS environment length before assertion. Compact IDs preserve the attack; corrected CI is required.
 - INFORMATIONAL: no OS sandbox, no universal behavioral proof, unauthenticated
   hash chains without external anchor, cooperative deadlines, single-owner kernel,
   finite case overfitting. Explicit design limits, not hidden security claims.

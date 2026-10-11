@@ -26,7 +26,7 @@ is N/A. Observed bugs and repairs are recorded in failure-repair-ledger.json.
 The executed suite contains 146 passing tests, including generated/property,
 metamorphic, adversarial and historical probes. Strict typing, lint/format,
 dependency audit, package build, legacy hashes and wheel CLI smoke passed locally.
-Exact coverage and compatibility evidence are in manifest.json; CI observation
+Two same-environment wheel builds with fixed SOURCE_DATE_EPOCH are byte-identical. A fresh remote clone independently passes all 146 tests, historical hashes and archived replay. Exact coverage and compatibility evidence are in manifest.json; CI observation
 is maintained in ci.json rather than inferred from workflow file presence.
 
 Benchmarks record seven repetitions, raw samples, dispersion, CPU/OS/Python,

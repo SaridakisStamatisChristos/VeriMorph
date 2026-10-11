@@ -1,28 +1,197 @@
 {
   "product": "VeriMorph",
-  "invariants": ["rejection preserves committed snapshot and fresh-run behavior", "only allowed AST expression values change", "oracle/verifier/policy are external to program", "every descendant charges the same root budget", "commit follows verification and evidence append", "deterministic search is semantically replayable"],
+  "invariants": [
+    "rejection preserves committed snapshot and fresh-run behavior",
+    "only allowed AST expression values change",
+    "oracle/verifier/policy are external to program",
+    "every descendant charges the same root budget",
+    "commit follows verification and evidence append",
+    "deterministic search is semantically replayable"
+  ],
   "requirements": [
-    {"id":"A","requirement":"clean installation","source":"USER","criticality":"HARD","evidence":"isolated wheel install and CLI smoke","surface":"pyproject.toml","status":"OPEN"},
-    {"id":"B","requirement":"specified integer language","source":"USER","criticality":"HARD","evidence":"language and metamorphic tests","surface":"language/runtime","status":"OPEN"},
-    {"id":"C","requirement":"atomic AST mutation and rejection","source":"USER","criticality":"HARD","evidence":"transaction and generated property tests","surface":"kernel/mutation","status":"OPEN"},
-    {"id":"D","requirement":"immutable trust/objective boundary","source":"USER","criticality":"HARD","evidence":"adversarial trust tests","surface":"policy/oracle/verifier","status":"OPEN"},
-    {"id":"E","requirement":"hierarchical root resource control","source":"USER","criticality":"HARD","evidence":"nested EVOLVE/loop/recursion/output tests","surface":"budget/runtime/kernel","status":"OPEN"},
-    {"id":"F","requirement":"determinism and replay","source":"USER","criticality":"HARD","evidence":"same-seed and altered-history tests","surface":"replay/provenance","status":"OPEN"},
-    {"id":"G","requirement":"inspectable bounded provenance","source":"USER","criticality":"HARD","evidence":"JSONL integrity and CLI tests","surface":"provenance/cli","status":"OPEN"},
-    {"id":"H","requirement":"historical failures and falsification","source":"USER","criticality":"HARD","evidence":"historical local reproducer and attack suite","surface":"tests/history","status":"OPEN"},
-    {"id":"I","requirement":"package/CLI","source":"USER","criticality":"HARD","evidence":"build/CLI clean smoke","surface":"packaging/cli","status":"OPEN"},
-    {"id":"J","requirement":"green CI","source":"USER","criticality":"HARD","evidence":"observed GitHub Actions on final head","surface":"workflow","status":"OPEN"},
-    {"id":"K","requirement":"accurate docs and research position","source":"USER","criticality":"HARD","evidence":"claims audit and primary prior-art references","surface":"docs","status":"OPEN"},
-    {"id":"L","requirement":"explicit security limits","source":"USER","criticality":"HARD","evidence":"threat model and capability denial tests","surface":"THREAT_MODEL.md","status":"OPEN"},
-    {"id":"M","requirement":"unchanged original files","source":"USER","criticality":"HARD","evidence":"byte hash comparison","surface":"legacy","status":"OPEN"},
-    {"id":"N","requirement":"cold final audit","source":"USER","criticality":"HARD","evidence":"severity findings and repair ledger","surface":"docs/evidence","status":"OPEN"},
-    {"id":"O","requirement":"reproducible benchmark","source":"USER","criticality":"HARD","evidence":"checked workload and measured environment/statistics","surface":"benchmarks","status":"OPEN"}
+    {
+      "id": "A",
+      "requirement": "clean installation",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "isolated wheel install and CLI smoke",
+      "surface": "pyproject.toml",
+      "status": "OPEN"
+    },
+    {
+      "id": "B",
+      "requirement": "specified integer language",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "language and metamorphic tests",
+      "surface": "language/runtime",
+      "status": "OPEN"
+    },
+    {
+      "id": "C",
+      "requirement": "atomic AST mutation and rejection",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "transaction and generated property tests",
+      "surface": "kernel/mutation",
+      "status": "OPEN"
+    },
+    {
+      "id": "D",
+      "requirement": "immutable trust/objective boundary",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "adversarial trust tests",
+      "surface": "policy/oracle/verifier",
+      "status": "OPEN"
+    },
+    {
+      "id": "E",
+      "requirement": "hierarchical root resource control",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "nested EVOLVE/loop/recursion/output tests",
+      "surface": "budget/runtime/kernel",
+      "status": "OPEN"
+    },
+    {
+      "id": "F",
+      "requirement": "determinism and replay",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "same-seed and altered-history tests",
+      "surface": "replay/provenance",
+      "status": "OPEN"
+    },
+    {
+      "id": "G",
+      "requirement": "inspectable bounded provenance",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "JSONL integrity and CLI tests",
+      "surface": "provenance/cli",
+      "status": "OPEN"
+    },
+    {
+      "id": "H",
+      "requirement": "historical failures and falsification",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "historical local reproducer and attack suite",
+      "surface": "tests/history",
+      "status": "OPEN"
+    },
+    {
+      "id": "I",
+      "requirement": "package/CLI",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "build/CLI clean smoke",
+      "surface": "packaging/cli",
+      "status": "OPEN"
+    },
+    {
+      "id": "J",
+      "requirement": "green CI",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "observed GitHub Actions on final head",
+      "surface": "workflow",
+      "status": "OPEN"
+    },
+    {
+      "id": "K",
+      "requirement": "accurate docs and research position",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "claims audit and primary prior-art references",
+      "surface": "docs",
+      "status": "OPEN"
+    },
+    {
+      "id": "L",
+      "requirement": "explicit security limits",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "threat model and capability denial tests",
+      "surface": "THREAT_MODEL.md",
+      "status": "OPEN"
+    },
+    {
+      "id": "M",
+      "requirement": "unchanged original files",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "byte hash comparison",
+      "surface": "legacy",
+      "status": "OPEN"
+    },
+    {
+      "id": "N",
+      "requirement": "cold final audit",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "severity findings and repair ledger",
+      "surface": "docs/evidence",
+      "status": "OPEN"
+    },
+    {
+      "id": "O",
+      "requirement": "reproducible benchmark",
+      "source": "USER",
+      "criticality": "HARD",
+      "evidence": "checked workload and measured environment/statistics",
+      "surface": "benchmarks",
+      "status": "OPEN"
+    }
   ],
   "assumptions": [
-    {"id":"A1","statement":"Python 3.11-3.14, stdlib-only runtime, single-threaded kernel","criticality":"MEDIUM","confidence":"high","affects":"A,E,I","invalidation":"concurrent embedding or different runtime target"},
-    {"id":"A2","statement":"New language is intentionally incompatible; historical files never enter production import path","criticality":"LOW","confidence":"high","affects":"B,M","invalidation":"explicit compatibility request"},
-    {"id":"A3","statement":"No host capabilities; malicious language text is untrusted, embedding Python and OS are trusted","criticality":"HIGH","confidence":"high","affects":"D,L","invalidation":"untrusted Python plugins or hostile host"},
-    {"id":"A4","statement":"No durable mutable service state; ledger replay reconstructs commits","criticality":"MEDIUM","confidence":"high","affects":"C,G","invalidation":"durable multi-process commit requirement"}
+    {
+      "id": "A1",
+      "statement": "Python 3.11-3.14, stdlib-only runtime, single-threaded kernel",
+      "criticality": "MEDIUM",
+      "confidence": "high",
+      "affects": "A,E,I",
+      "invalidation": "concurrent embedding or different runtime target"
+    },
+    {
+      "id": "A2",
+      "statement": "New language is intentionally incompatible; historical files never enter production import path",
+      "criticality": "LOW",
+      "confidence": "high",
+      "affects": "B,M",
+      "invalidation": "explicit compatibility request"
+    },
+    {
+      "id": "A3",
+      "statement": "No host capabilities; malicious language text is untrusted, embedding Python and OS are trusted",
+      "criticality": "HIGH",
+      "confidence": "high",
+      "affects": "D,L",
+      "invalidation": "untrusted Python plugins or hostile host"
+    },
+    {
+      "id": "A4",
+      "statement": "No durable mutable service state; ledger replay reconstructs commits",
+      "criticality": "MEDIUM",
+      "confidence": "high",
+      "affects": "C,G",
+      "invalidation": "durable multi-process commit requirement"
+    },
+    {
+      "id": "A5",
+      "statement": "Conservative proprietary LICENSE for new implementation; no publishing license grant inferred from public visibility; historical notices remain unchanged",
+      "criticality": "LOW",
+      "confidence": "medium",
+      "affects": "I,K,M",
+      "invalidation": "owner selects a different license"
+    }
   ],
-  "applicability": {"network/filesystem language capability":"N/A: intentionally absent", "optimizer":"N/A: omitted to avoid unsupported semantic claims", "OS sandbox":"N/A: not implemented or claimed", "formal proof":"N/A: verified means executable gates, not machine-checked proof", "cloud/auth/database":"N/A: local experimental runtime"}
+  "applicability": {
+    "network/filesystem language capability": "N/A: intentionally absent",
+    "optimizer": "N/A: omitted to avoid unsupported semantic claims",
+    "OS sandbox": "N/A: not implemented or claimed",
+    "formal proof": "N/A: verified means executable gates, not machine-checked proof",
+    "cloud/auth/database": "N/A: local experimental runtime"
+  }
 }

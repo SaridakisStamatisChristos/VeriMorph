@@ -1,0 +1,7 @@
+{
+  "wheel_reproducible_same_environment": true,
+  "source_date_epoch": 1791676800,
+  "wheel_sha256": "ef7054d5235b429bebf5739d79be2ce73441a85d396b59ee2bb7737319a83612",
+  "command": "SOURCE_DATE_EPOCH=1791676800 python -m build --wheel --no-isolation",
+  "scope": "Two independent wheel builds, same source and Python/setuptools environment; no cross-platform binary identity claim"
+}

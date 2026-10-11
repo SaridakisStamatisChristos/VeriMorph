@@ -38,6 +38,14 @@
       "id": "A4",
       "invalidation": "durable multi-process commit requirement",
       "statement": "No durable mutable service state; ledger replay reconstructs commits"
+    },
+    {
+      "affects": "I,K,M",
+      "confidence": "medium",
+      "criticality": "LOW",
+      "id": "A5",
+      "invalidation": "owner selects a different license",
+      "statement": "Conservative proprietary LICENSE for new implementation; no publishing license grant inferred from public visibility; historical notices remain unchanged"
     }
   ],
   "ci": {
@@ -124,15 +132,17 @@
     "benchmarks/bench.py": "1b897a4a619d3d8226924ef51c6f658df0fe20ac5ec9ae12d4a6199866e1245a",
     "benchmarks/workload.vm": "180ba575044cd22b4aad4737f6c34266bfdf7d960307c80bef9494fb22d7b31d",
     "docs/PLAN.md": "a76557afaef855d14a92effeec4b279795686373f2148c0147483a0445ac095e",
-    "docs/contract.json": "88f601e0f3891856572b9ff0cb54e40552fb4b81caf449d49ed50bed06674c1d",
-    "docs/evidence/FINAL_AUDIT.md": "af0c94faea0c64d0242e6fb061d3c53dd2867db6ea526902042225a4d4106e67",
-    "docs/evidence/REPORT.md": "77decd25be35cf6c29d65ee986ee2e2a74f4e58409bd15f997bdec5c88a6cbc9",
+    "docs/contract.json": "cde8b9e0324537a6b66d0a1e8739542038e270cbe010ae2c9a5db08aa3b113f3",
+    "docs/evidence/BENCHMARK.md": "52ced7156483ede44e06b80310046f69138eafaafe6ce6c504a44ce5c0474bb3",
+    "docs/evidence/FINAL_AUDIT.md": "84913a81dbb19d5d120db266516ea1062ae453bfe722d693e943658697e39883",
+    "docs/evidence/REPORT.md": "05b4d43ea6780ef27efe1668d569058779a829b7d48870e03306b5c24a108bc3",
     "docs/evidence/benchmark.json": "ea853ae7438846a3f3636f4b8a682caa5e3f6c4855be51049a5a4f98a31dc2f0",
     "docs/evidence/coverage.json": "9d2820e8437800c65a7c2e5dd512360ae5019dc48141577cb41ec7b6c834a022",
     "docs/evidence/coverage.txt": "e2eb1e648667a8389509720d233f80ede4ce714de01fc3f3feb28d47d063df2c",
     "docs/evidence/dependency-audit.json": "65478facbdb70700b639d426810dfb1494e34e810b271c7b6372b19827da32bd",
-    "docs/evidence/failure-repair-ledger.json": "f266825f19d52be92e6e0be744a2a434a1dc9a59e235041522293c001eaaf653",
+    "docs/evidence/failure-repair-ledger.json": "2fa33001ccc92ac74b7dc39ff87fe4541c92f9c6f889c084ea25f3f1ac342093",
     "docs/evidence/legacy-reproduction.json": "b11e5565f1da88b0be558f6485d87d421ff23ad06c140c71d8a72fc92d44ca4f",
+    "docs/evidence/package-reproducibility.json": "369e5acfdd6e4615b8623d883ff5485a5427db6d6ab642fb65827a20331f7fec",
     "docs/evidence/package-smoke.json": "b533e60076f06a4f9e0df2181ffdccfbf62adb73d9d6b0b122549aaebe940a20",
     "docs/evidence/seed42-summary.json": "98f2a686644dfb14518d79ffaa814a57e063d49946674b3d441d6189b2755b0b",
     "docs/evidence/seed42.jsonl": "9107e68d2aef226e76907156708c1e47668a33cac69ee005a2a55398007ae213",
@@ -178,7 +188,7 @@
     "tests/test_budget.py": "3481f389a8762193f48378e385ba6eafb2f41d54fa986f987cdbf726f28d1c51",
     "tests/test_cli.py": "89d44ec2fc94265371f20e4842e306e66e82ea896315f4978f4a4fc17e45fae8",
     "tests/test_history.py": "d3ca4d9e6c15b6c7075374c3c4d95601e41a46f0e378635e218fae4d87105068",
-    "tests/test_language.py": "3663b8ecd13e299800b2d9b56f6ad389680e797fff94311fca5547282e244a8c",
+    "tests/test_language.py": "40169c390e19bc18a4a515ba7987c4ee6064c8ff5115ba6d91c7f70f416501f9",
     "tests/test_replay.py": "f3d27922e91e8df7c15fee7986cfcb0a8abb3f3e4589a54b9c88602ce6be95c9",
     "tests/test_transaction.py": "ac68db1e694be889cbab19a7d4a864acecca5080f4bd6332dfd5f1bc5bb893ca"
   },

@@ -20,7 +20,7 @@ CONDITIONAL — CI observation pending
 | N cold final audit | VERIFIED | docs/evidence/FINAL_AUDIT.md; docs/evidence/failure-repair-ledger.json |
 | O reproducible benchmark | VERIFIED | benchmarks/bench.py; docs/evidence/benchmark.json |
 
-File checksums: 76 files; see manifest.json. Self-reference exclusions are explicit.
+File checksums: 78 files; see manifest.json. Self-reference exclusions are explicit.
 Local Python: 3.12.14. Coverage: 92.81% including branches.
 
 Limitations: finite cases, trusted Python/OS, cooperative time accounting, no OS sandbox or formal proof, single-owner kernel. Research novelty and production qualification are not established.

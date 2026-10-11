@@ -141,6 +141,7 @@ def test_parser_fuzz_fails_explicitly(text):
         "FUNC main() { RETURN " + "1+" * 5000 + "1; }",
         "FUNC main() { RETURN " + "9" * 1000 + "; }",
     ],
+    ids=["oversize", "deep-expression", "deep-block", "long-chain", "long-integer"],
 )
 def test_parser_abuse(source):
     with pytest.raises(VeriMorphError):
