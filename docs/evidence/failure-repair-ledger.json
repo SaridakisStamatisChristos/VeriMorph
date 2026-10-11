@@ -1,0 +1,90 @@
+[
+  {
+    "id": "F1",
+    "severity": "HIGH",
+    "phase": "SPEC",
+    "failure": "Replay rejected all nine initial replay scenarios",
+    "reproducer": "tests/test_replay.py: initial 9 failed / 103 passed",
+    "cause": "Initial admission counted original whitespace bytes; header stored canonical source",
+    "repair": "Canonical admission-byte accounting and formatting-equivalence regression",
+    "reverification": "Full replay suite and independent formatting equivalence test",
+    "status": "VERIFIED"
+  },
+  {
+    "id": "F2",
+    "severity": "HIGH",
+    "phase": "GENERATE",
+    "failure": "Journal I/O interruption could allow retry after a partial append",
+    "reproducer": "fsync fault injection / cold inspection",
+    "cause": "No poison flag on failed file append or kernel session",
+    "repair": "Close ledger and kernel session before propagating failed append; committed reference unchanged",
+    "reverification": "test_journal_failure_poisoning_prevents_later_commit and test_io_failure_is_atomic",
+    "status": "VERIFIED"
+  },
+  {
+    "id": "F3",
+    "severity": "MEDIUM",
+    "phase": "GENERATE",
+    "failure": "VM reuse would retain earlier output",
+    "reproducer": "VM run twice / cold inspection",
+    "cause": "VM output list persisted on reusable instance",
+    "repair": "Disposable one-run VM contract enforced",
+    "reverification": "test_disposable_vm_cannot_reuse_output_or_state plus fresh-case state isolation",
+    "status": "VERIFIED"
+  },
+  {
+    "id": "F4",
+    "severity": "MEDIUM",
+    "phase": "GENERATE",
+    "failure": "Host stack recursion could escape typed budget diagnostics",
+    "reproducer": "deep expression around recursive call and injected host RecursionError",
+    "cause": "Recursive Python evaluation may hit host recursion before declared VM call limit",
+    "repair": "Convert host RecursionError to sticky host_stack exhaustion",
+    "reverification": "host stack tests and full budget suite",
+    "status": "VERIFIED"
+  },
+  {
+    "id": "F5",
+    "severity": "MEDIUM",
+    "phase": "GENERATE",
+    "failure": "Negative numeric AST values did not preserve canonical roundtrip",
+    "reproducer": "0 -> -1 literal mutation / inspection",
+    "cause": "Serializer emitted signed literal, parser returned unary AST",
+    "repair": "Normalize signed numeric literals and unary numeric constants",
+    "reverification": "negative mutation, MIN_INT semantics and generated roundtrips",
+    "status": "VERIFIED"
+  },
+  {
+    "id": "F6",
+    "severity": "LOW",
+    "phase": "INTEGRATE",
+    "failure": "Test runner invoked from workspace parent could not import package",
+    "reproducer": "initial pytest from parent",
+    "cause": "Repository pytest config not selected",
+    "repair": "Run commands from repository root and independently wheel-install outside checkout",
+    "reverification": "root verification and fresh-venv wheel smoke",
+    "status": "VERIFIED"
+  },
+  {
+    "id": "F7",
+    "severity": "LOW",
+    "phase": "VERIFY",
+    "failure": "Initial host-stack test exceeded parser depth before reaching VM",
+    "reproducer": "35 nested parenthesized terms",
+    "cause": "Adversarial fixture crossed parse gate first",
+    "repair": "Use parser-admissible 20-term fixture and separate injected RecursionError oracle",
+    "reverification": "host stack and parser-depth tests",
+    "status": "VERIFIED"
+  },
+  {
+    "id": "F8",
+    "severity": "MEDIUM",
+    "phase": "GENERATE",
+    "failure": "Stage recorder extension caused four nested-evaluation failures and strict typing errors",
+    "cause": "Optional stages list not initialized on preview path",
+    "repair": "Initialize stages consistently and preserve completed prefixes",
+    "reproducer": "nested EVOLVE, recursive replay and runtime CLI tests",
+    "reverification": "strict mypy and full 146-test suite",
+    "status": "VERIFIED"
+  }
+]

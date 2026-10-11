@@ -1,0 +1,57 @@
+Processing /workspace/scratch/66811e719ec2/VeriMorph/dist/verimorph-0.1.0-py3-none-any.whl
+Installing collected packages: verimorph
+Successfully installed verimorph-0.1.0
+{
+  "package_smoke": "verified",
+  "commands": [
+    {
+      "args": [
+        "--help"
+      ],
+      "exit": 0,
+      "output": "usage: verimorph [-h] {check,run,evolve,inspect,replay,history,diff} ...\n\nBounded transactional self-modification; no OS sandbox or formal-proof claim.\n\npositional arguments:\n  {check,run,evolve,inspect,replay,history,diff}\n\noptions:\n  -h, --help            show this help message and exit"
+    },
+    {
+      "args": [
+        "check",
+        "/workspace/scratch/66811e719ec2/VeriMorph/examples/evolve.vm"
+      ],
+      "exit": 0,
+      "output": "{\"content_hash\":\"fee81472defb44463552a3a5efaa3e926efff8d24c78540ce63360c3666eaab4\",\"snapshot\":\"66f725e119a09264aa1d7e3af80b0714f4a1d3d7e439cd54f7f8f41c605d05eb\",\"valid\":true}"
+    },
+    {
+      "args": [
+        "run",
+        "/workspace/scratch/66811e719ec2/VeriMorph/examples/basic.vm"
+      ],
+      "exit": 0,
+      "output": "{\"output\":[12],\"returned\":12}"
+    },
+    {
+      "args": [
+        "evolve",
+        "/workspace/scratch/66811e719ec2/VeriMorph/examples/evolve.vm",
+        "--ledger",
+        "/tmp/tmprxlnxjry/run.jsonl"
+      ],
+      "exit": 0,
+      "output": "{\"anchor\":\"32d10cbc047cfc4a056e5e22d94495c11355eb06e69dbbd5a4c375e810e969e4\",\"attempts\":32,\"final\":\"cf294c3f4991eb63de920b7182e484d6b505cab9ad7b070927acbd57cf27a144\",\"kind\":\"end\",\"resources\":{\"ast_nodes\":66,\"audit_events\":37,\"compilations\":33,\"evaluations\":33,\"mutations\":32,\"output_bytes\":0,\"source_bytes\":880,\"steps\":99},\"score\":0,\"source\":\"FUNC main() { RETURN 12; }\\n\",\"status\":\"complete\"}"
+    },
+    {
+      "args": [
+        "replay",
+        "/tmp/tmprxlnxjry/run.jsonl"
+      ],
+      "exit": 0,
+      "output": "{\"anchor\":\"32d10cbc047cfc4a056e5e22d94495c11355eb06e69dbbd5a4c375e810e969e4\",\"final\":\"cf294c3f4991eb63de920b7182e484d6b505cab9ad7b070927acbd57cf27a144\",\"replay\":\"verified\"}"
+    },
+    {
+      "args": [
+        "inspect",
+        "/workspace/scratch/66811e719ec2/VeriMorph/examples/evolve.vm"
+      ],
+      "exit": 0,
+      "output": "{\"content_hash\":\"fee81472defb44463552a3a5efaa3e926efff8d24c78540ce63360c3666eaab4\",\"nodes\":[{\"id\":\"main/0\",\"kind\":\"return\",\"value\":\"\"},{\"id\":\"main/0/0\",\"kind\":\"number\",\"value\":5}],\"snapshot\":\"66f725e119a09264aa1d7e3af80b0714f4a1d3d7e439cd54f7f8f41c605d05eb\",\"source\":\"FUNC main() { RETURN 5; }\\n\",\"valid\":true}"
+    }
+  ]
+}

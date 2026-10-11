@@ -1,0 +1,12 @@
+include *.md LICENSE requirements-dev.lock .gitattributes
+recursive-include src *.py py.typed
+recursive-include tests *.py
+recursive-include examples *.vm *.json *.py
+recursive-include benchmarks *.vm *.py
+recursive-include scripts *.py
+recursive-include docs *.md *.json *.jsonl *.txt
+recursive-include legacy *.md *.py
+recursive-include .github *.yml
+prune build
+prune dist
+global-exclude __pycache__ *.pyc

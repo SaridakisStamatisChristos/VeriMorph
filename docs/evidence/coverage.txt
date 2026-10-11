@@ -1,0 +1,17 @@
+Name                          Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------------
+src/verimorph/__init__.py         1      0      0      0   100%
+src/verimorph/budget.py          78      1     18      1    98%   66
+src/verimorph/cli.py            103      3     38      3    96%   28, 106, 156
+src/verimorph/errors.py           8      0      0      0   100%
+src/verimorph/kernel.py         199      8     34      7    94%   65, 74, 114->exit, 130-133, 152, 211, 306, 308
+src/verimorph/language.py       266     17    126     14    92%   79, 106, 123, 134, 203, 213-216, 222, 256, 259, 299, 303, 334, 343, 348
+src/verimorph/mutation.py        68      5     30      4    91%   84, 102-108, 113->91, 116
+src/verimorph/oracle.py          44      2     16      2    93%   27, 60
+src/verimorph/provenance.py      77      5     24      5    90%   27, 33, 66, 72, 77
+src/verimorph/replay.py          48      5     16      3    88%   40, 44, 58-60
+src/verimorph/runtime.py        101      5     58      6    93%   56, 62, 88, 111, 112->92, 114
+src/verimorph/snapshots.py       29      2      2      1    90%   40-42
+src/verimorph/verifier.py        65      3     40      3    94%   54, 57, 64
+-------------------------------------------------------------------------
+TOTAL                          1087     56    402     49    93%

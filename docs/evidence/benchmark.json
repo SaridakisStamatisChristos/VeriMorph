@@ -1,0 +1,129 @@
+{
+  "command": "python benchmarks/bench.py --repetitions 7 --inner 20",
+  "environment": {
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logical_cpus": 9,
+    "machine": "x86_64",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "inner": 20,
+  "limitations": "Shared container; timings are noisy and are not comparative evidence. Fsync path is temporary local filesystem.",
+  "repetitions": 7,
+  "results": {
+    "evaluate_32_candidates_fsync_ledger": {
+      "max": 5436.178,
+      "median": 4593.661,
+      "min": 4146.539,
+      "samples": [
+        4593.661,
+        4460.631,
+        4146.539,
+        5290.509,
+        4341.362,
+        5369.088,
+        5436.178
+      ],
+      "stdev": 542.2305682278219,
+      "unit": "microseconds/operation"
+    },
+    "evaluate_32_candidates_memory_ledger": {
+      "max": 3845.08725,
+      "median": 3762.27015,
+      "min": 3557.0384,
+      "samples": [
+        3557.0384,
+        3762.27015,
+        3835.2955,
+        3777.5256,
+        3758.27015,
+        3761.12095,
+        3845.08725
+      ],
+      "stdev": 95.16743426991245,
+      "unit": "microseconds/operation"
+    },
+    "execute_100_loop_iterations": {
+      "max": 303.52565000000004,
+      "median": 301.3123,
+      "min": 299.87215000000003,
+      "samples": [
+        303.52565000000004,
+        303.1285,
+        302.05945,
+        300.50359999999995,
+        299.87215000000003,
+        300.09595,
+        301.3123
+      ],
+      "stdev": 1.455881744690763,
+      "unit": "microseconds/operation"
+    },
+    "parse": {
+      "max": 52.8625,
+      "median": 50.0859,
+      "min": 49.0583,
+      "samples": [
+        50.0493,
+        50.0859,
+        51.43235,
+        49.2025,
+        49.0583,
+        52.66575,
+        52.8625
+      ],
+      "stdev": 1.5697848530550131,
+      "unit": "microseconds/operation"
+    },
+    "replay_32_candidates": {
+      "max": 6584.2311,
+      "median": 6035.14105,
+      "min": 5411.026599999999,
+      "samples": [
+        5411.026599999999,
+        5669.13295,
+        5878.085099999999,
+        6584.2311,
+        6238.33475,
+        6042.22875,
+        6035.14105
+      ],
+      "stdev": 380.67927105541617,
+      "unit": "microseconds/operation"
+    },
+    "snapshot": {
+      "max": 108.10610000000001,
+      "median": 101.41255,
+      "min": 93.90575,
+      "samples": [
+        101.41255,
+        93.90575,
+        108.10610000000001,
+        106.9699,
+        105.29245,
+        97.726,
+        95.63189999999999
+      ],
+      "stdev": 5.686217499901892,
+      "unit": "microseconds/operation"
+    },
+    "static_verify": {
+      "max": 32.40425,
+      "median": 31.1734,
+      "min": 30.789849999999998,
+      "samples": [
+        32.08925,
+        31.1734,
+        30.7978,
+        32.40425,
+        31.4148,
+        30.789849999999998,
+        31.164900000000003
+      ],
+      "stdev": 0.6225194129694342,
+      "unit": "microseconds/operation"
+    }
+  },
+  "warmup": 2,
+  "workload_sha256": "180ba575044cd22b4aad4737f6c34266bfdf7d960307c80bef9494fb22d7b31d"
+}

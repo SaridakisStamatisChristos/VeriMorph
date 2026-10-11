@@ -1,0 +1,1 @@
+FUNC main() { EVOLVE 1; RETURN 5; }

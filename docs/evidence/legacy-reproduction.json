@@ -1,0 +1,58 @@
+{
+  "advisory_analysis": {
+    "compiled_despite_warning": true,
+    "warning_logged": true
+  },
+  "demo_actual_edit": {
+    "line2_after": "x = x + 1",
+    "main_assignment": "    x = 5"
+  },
+  "demo_line_target": {
+    "line2": "    RETURN 100 - (x - 12) * (x - 12)",
+    "line2_inside": "fitness"
+  },
+  "fitness_tampering": {
+    "attempt": 6,
+    "baseline": [
+      100,
+      true
+    ],
+    "candidate": [
+      101,
+      true
+    ],
+    "seed": 0,
+    "target_behavior_unchanged": true
+  },
+  "hmac": {
+    "calculation_logged": true,
+    "trusted_expected_mac_input": false
+  },
+  "nontransactional": {
+    "compile_error": "Unexpected token in expression: NEWLINE at line 2",
+    "live_source_changed": true
+  },
+  "original_sha256": {
+    "README(20261011-061843).md": "89e8cc78e033762c1da058ff1a5665c4bedc6b226bd5f85f487b3f3f69d3df85",
+    "SPEC.md": "8b055655a9986693832992aaa621ef0fee6ec05e34f1ad9003a0cdf6de2e26e9",
+    "__init__.py": "28f5b0bf50d7a7e9753d5828a9362e53cb1e093334c8dd003eea9f95bbbaddc4",
+    "interpreter_secure.py": "4d8843dfa7d53182bee59cd6f8f48d722c74aea8593db482fd04964f024c04c4",
+    "static_analyzer.py": "6617e45931a6a5f5f217aa6f141bdb7ffd373ddc9009362572b634b1ce279500"
+  },
+  "recursive_evaluation": {
+    "first_parent_steps": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "interpretation": "fresh child counters; bounded instrumentation, not a timeout claim",
+    "per_interpreter_limit": 3,
+    "probe_cap": 8,
+    "score_calls": 15
+  }
+}

@@ -1,0 +1,2 @@
+FUNC twice(x) { RETURN x * 2; }
+FUNC main() { PRINT twice(6); RETURN twice(6); }

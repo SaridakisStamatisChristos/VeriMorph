@@ -1,0 +1,390 @@
+{
+  "applicability": {
+    "OS sandbox": "N/A: not implemented or claimed",
+    "cloud/auth/database": "N/A: local experimental runtime",
+    "formal proof": "N/A: verified means executable gates, not machine-checked proof",
+    "network/filesystem language capability": "N/A: intentionally absent",
+    "optimizer": "N/A: omitted to avoid unsupported semantic claims"
+  },
+  "assumptions": [
+    {
+      "affects": "A,E,I",
+      "confidence": "high",
+      "criticality": "MEDIUM",
+      "id": "A1",
+      "invalidation": "concurrent embedding or different runtime target",
+      "statement": "Python 3.11-3.14, stdlib-only runtime, single-threaded kernel"
+    },
+    {
+      "affects": "B,M",
+      "confidence": "high",
+      "criticality": "LOW",
+      "id": "A2",
+      "invalidation": "explicit compatibility request",
+      "statement": "New language is intentionally incompatible; historical files never enter production import path"
+    },
+    {
+      "affects": "D,L",
+      "confidence": "high",
+      "criticality": "HIGH",
+      "id": "A3",
+      "invalidation": "untrusted Python plugins or hostile host",
+      "statement": "No host capabilities; malicious language text is untrusted, embedding Python and OS are trusted"
+    },
+    {
+      "affects": "C,G",
+      "confidence": "high",
+      "criticality": "MEDIUM",
+      "id": "A4",
+      "invalidation": "durable multi-process commit requirement",
+      "statement": "No durable mutable service state; ledger replay reconstructs commits"
+    }
+  ],
+  "ci": {
+    "status": "UNVERIFIED"
+  },
+  "claims": [
+    {
+      "claim": "Rejected candidates preserve committed snapshot and fresh behavior",
+      "evidence": [
+        "tests/test_transaction.py::test_rejected_mutation_preserves_state_and_behavior",
+        "tests/test_transaction.py::test_malformed_ast_cannot_commit"
+      ],
+      "state": "VERIFIED"
+    },
+    {
+      "claim": "Candidate source cannot change external oracle/verifier/policy under trusted-host model",
+      "evidence": [
+        "tests/test_transaction.py::test_historical_objective_tampering_regression",
+        "tests/test_adversarial.py::test_no_host_or_legacy_capabilities"
+      ],
+      "state": "VERIFIED"
+    },
+    {
+      "claim": "Descendants share one sticky root budget",
+      "evidence": [
+        "tests/test_budget.py::test_recursive_evolve_never_receives_fresh_account",
+        "tests/test_budget.py::test_global_exhaustion"
+      ],
+      "state": "VERIFIED"
+    },
+    {
+      "claim": "Successful compute-bounded seeded runs replay semantically",
+      "evidence": [
+        "tests/test_replay.py::test_search_replay",
+        "tests/test_replay.py::test_same_seed_identical_histories_and_final",
+        "tests/test_replay.py::test_runtime_self_modification_pins_active_snapshot"
+      ],
+      "state": "VERIFIED"
+    },
+    {
+      "claim": "Formal proof, OS sandbox, hostile-host authenticity, universal behavior or performance superiority",
+      "rationale": "Not implemented, claimed, or in declared acceptance model",
+      "state": "N/A"
+    },
+    {
+      "claim": "Publication novelty and production qualification",
+      "rationale": "System artifact completed; no independent production or novelty study",
+      "state": "UNVERIFIED"
+    }
+  ],
+  "coverage": {
+    "covered_branches": 351,
+    "covered_lines": 1031,
+    "excluded_lines": 0,
+    "missing_branches": 51,
+    "missing_lines": 56,
+    "num_branches": 402,
+    "num_partial_branches": 49,
+    "num_statements": 1087,
+    "percent_branches_covered": 87.31343283582089,
+    "percent_branches_covered_display": "87",
+    "percent_covered": 92.81396910678308,
+    "percent_covered_display": "93",
+    "percent_statements_covered": 94.84820607175713,
+    "percent_statements_covered_display": "95"
+  },
+  "file_hashes": {
+    ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    ".github/workflows/ci.yml": "a487f7c626d5e8e1f34060b1f604a99b54a2db531cbffaf9c09adbb46a32204a",
+    ".gitignore": "fb9b85d3592368c73a1087fff3299fd4fa446b3651925883eae761d45536209c",
+    "ARCHITECTURE.md": "9bc8260351e6f698fce3b0cad8139e1c2930c2adc3ec8abaa3f53647b3b96bee",
+    "CHANGELOG.md": "e345105a4ec2b1bc1eec6b3d2c747ed7c33f9e45e626c20556a8eb0a12ad4fab",
+    "CONTRIBUTING.md": "f883cf63479c6eced83f0b67a708fb50a837301bea8dcab3a507fe01efe71732",
+    "DETERMINISM.md": "650dc4e40c6c0fa4882bcd257756d358cb30c4737d8961ac0b38203ce869c3c9",
+    "LICENSE": "61550a2b46c8b87648b8a97c12354209cad3f37d2251ced9a50de6c8cd44ac27",
+    "MANIFEST.in": "a668439717b06a6215ed8fed7b23b62f223020587d8856b95056d69eb7be6172",
+    "MUTATION_MODEL.md": "87f128b138cd06d854c2f503dc86d6f78dd115d66aa6762b8db50f69ba5635d0",
+    "PROVENANCE.md": "b2250a94aa3571790dd4e10a9a851a9f9438a1a0bb0903613d17201f5c3773b8",
+    "README.md": "de7fb2935ecf2d1b6dba75fc192d1d73a923b1269ed8e4c82d35b732a24fd696",
+    "SECURITY.md": "5aabeba0861d2e3637a883595725a36bef87ec03bf5a1905f6c237cf00238a8c",
+    "SPEC.md": "602f8caf82b94f7f4133d6213e1993c0b184aa5a7aca8f3a6f2dd4a64e9b250c",
+    "THREAT_MODEL.md": "5e600c77125020cfe792239f8193cc656a74937975a2fb7165aacd4014fb257b",
+    "VERIFICATION.md": "6f8883ac92da8d86a9ec3596883b757fa93649e358fe6738bf9f5bfdf5aa30fa",
+    "benchmarks/bench.py": "1b897a4a619d3d8226924ef51c6f658df0fe20ac5ec9ae12d4a6199866e1245a",
+    "benchmarks/workload.vm": "180ba575044cd22b4aad4737f6c34266bfdf7d960307c80bef9494fb22d7b31d",
+    "docs/PLAN.md": "a76557afaef855d14a92effeec4b279795686373f2148c0147483a0445ac095e",
+    "docs/contract.json": "88f601e0f3891856572b9ff0cb54e40552fb4b81caf449d49ed50bed06674c1d",
+    "docs/evidence/FINAL_AUDIT.md": "af0c94faea0c64d0242e6fb061d3c53dd2867db6ea526902042225a4d4106e67",
+    "docs/evidence/REPORT.md": "77decd25be35cf6c29d65ee986ee2e2a74f4e58409bd15f997bdec5c88a6cbc9",
+    "docs/evidence/benchmark.json": "ea853ae7438846a3f3636f4b8a682caa5e3f6c4855be51049a5a4f98a31dc2f0",
+    "docs/evidence/coverage.json": "9d2820e8437800c65a7c2e5dd512360ae5019dc48141577cb41ec7b6c834a022",
+    "docs/evidence/coverage.txt": "e2eb1e648667a8389509720d233f80ede4ce714de01fc3f3feb28d47d063df2c",
+    "docs/evidence/dependency-audit.json": "65478facbdb70700b639d426810dfb1494e34e810b271c7b6372b19827da32bd",
+    "docs/evidence/failure-repair-ledger.json": "f266825f19d52be92e6e0be744a2a434a1dc9a59e235041522293c001eaaf653",
+    "docs/evidence/legacy-reproduction.json": "b11e5565f1da88b0be558f6485d87d421ff23ad06c140c71d8a72fc92d44ca4f",
+    "docs/evidence/package-smoke.json": "b533e60076f06a4f9e0df2181ffdccfbf62adb73d9d6b0b122549aaebe940a20",
+    "docs/evidence/seed42-summary.json": "98f2a686644dfb14518d79ffaa814a57e063d49946674b3d441d6189b2755b0b",
+    "docs/evidence/seed42.jsonl": "9107e68d2aef226e76907156708c1e47668a33cac69ee005a2a55398007ae213",
+    "docs/evidence/test-results.txt": "ab6e24f64a20c9013d07c07047b2175a0736ddce7b93bf1675596a6faea8e875",
+    "docs/history/original-prototype.md": "0e5a496227c5083ec6b81c8f13e39df5206de0fd3f8e850646223ab6beabc811",
+    "docs/research-position.md": "6c801c6ab45e337473e6ab17267126f87a3b6b0919098ed75752ebc4985cf6df",
+    "examples/basic.vm": "e0c0e413ac1a060c523f9d2f3063a0a8020f10a869fbe56a4d187ab4b8d163b7",
+    "examples/evolve.vm": "2690c0260b10c8b01cacd28c4a79f24c64f2cc95e2d829e72f6af0638f4fd8f7",
+    "examples/loop.vm": "4cf573e815ebe3ea7326c8e35bfaa8b3e90db650b62628014bfffc5483a9f829",
+    "examples/recursive_evolve.json": "08990a25f20313d09271ca2f080742ddd14d96611652c0c4690c358d430b0a24",
+    "examples/recursive_evolve.vm": "bc89220cd5ad0f613c644b97ce8034fc0cf2b88786029e5258807352dc80a98f",
+    "examples/self_modify.json": "0e473f033f4309c98d68ce65da581177e8220f5601557a8c9ba65adfb5ab0a31",
+    "examples/self_modify.vm": "49c8029ee6b0ef6b5df37fe3fdbbcf3705b3b8c19e41ef9e6892f5bf95b10f3b",
+    "examples/transaction.py": "f133185d3b78bf0a81895ce4637ae17b268824e2f0859483ada31763625961a3",
+    "legacy/original-prototype/README(20261011-061843).md": "89e8cc78e033762c1da058ff1a5665c4bedc6b226bd5f85f487b3f3f69d3df85",
+    "legacy/original-prototype/SPEC.md": "8b055655a9986693832992aaa621ef0fee6ec05e34f1ad9003a0cdf6de2e26e9",
+    "legacy/original-prototype/__init__.py": "28f5b0bf50d7a7e9753d5828a9362e53cb1e093334c8dd003eea9f95bbbaddc4",
+    "legacy/original-prototype/interpreter_secure.py": "4d8843dfa7d53182bee59cd6f8f48d722c74aea8593db482fd04964f024c04c4",
+    "legacy/original-prototype/static_analyzer.py": "6617e45931a6a5f5f217aa6f141bdb7ffd373ddc9009362572b634b1ce279500",
+    "pyproject.toml": "0fa383f48d1f4793b773050ef318c27b740210acf7f976e9c377dfa7f6f2fb06",
+    "requirements-dev.lock": "107cde7c94f8803f3cc4c28a0dcfe87232001c190a6b09435917dc3699685531",
+    "scripts/check_legacy.py": "292b1c98baf65d370013535b7a2d34042e993b9e462432987180a798d8a33fc8",
+    "scripts/check_manifest.py": "efb6102ab1af7836a53fa9778831789fd10df0d62f474bc9e293adaa80adde87",
+    "scripts/manifest.py": "be15bd3ad1a7d6c4cb0f3821496b32c30b467202c75fc65fbe9c0d1b6596d49c",
+    "scripts/package_smoke.py": "d250e179003cd21b9c7193b8aa297ec58b81fdbf5c58512daaa048dfd2fd863f",
+    "scripts/reproduce_legacy.py": "e2f2d2711c176ddaa4fc4eb7e7f0f960785ac8d89a4b5d9a8d4abe8abe7ada66",
+    "scripts/verify.py": "52cfe087436ae65b9fdb88fd89973001886a685e8dba905e2d9aede54c175454",
+    "src/verimorph/__init__.py": "ab893cbcd8d89d0f8582b6fe1c6cfbba476a434917077db668b845001252385a",
+    "src/verimorph/budget.py": "788e45123c710f49eeec1f5b602e850249139260b00e8769beb37db750245192",
+    "src/verimorph/cli.py": "a2f7442034236ea4b404637e0356127e566b93856205bb131398bcde2c64b66f",
+    "src/verimorph/errors.py": "4bc64845c3a048fb60d93977c2f187328c38f2cfd47c5edb9b0cc013ba22d6e8",
+    "src/verimorph/kernel.py": "9bf5484a89a12c8717ce698fc5ce37a01fcf7c5c77d56b811f08c11fae9965d4",
+    "src/verimorph/language.py": "834bc95cfeec51d090415fff8467558b772387a5a217e8e5051544aeaef02dc1",
+    "src/verimorph/mutation.py": "8d0156271240feba2ad3302713605142b9acf4dd3d7b7abff7d2825a88a42066",
+    "src/verimorph/oracle.py": "3f99a3bd213dbd5942a9106d31eec3e6c5a901f287e3a60401527d5100010b63",
+    "src/verimorph/provenance.py": "c550e428a7ef4753c4f2e385485bb8ab538ee516c82a5da42af8a4b52edce219",
+    "src/verimorph/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/verimorph/replay.py": "69900e0eaa0fe4f2b031fdad878165982a93d90d1dcf08b898f10b3281e6b0f8",
+    "src/verimorph/runtime.py": "048c97ef228af1d68ab280baccef7486b3a5908d7578642d84b316cea142d9fb",
+    "src/verimorph/snapshots.py": "7078b95072369a6edb1dc672693d90fadab93148219ec3e4412188c446fec04d",
+    "src/verimorph/verifier.py": "5e3ec08b650012d1d6a7df1306fd51f3a90ad24d1567afd2770ca40f83a27287",
+    "tests/test_adversarial.py": "e853fc402b63d9fde979b6ba74f0764f49e378d1a3c618adb05fe4aa9b0264c3",
+    "tests/test_budget.py": "3481f389a8762193f48378e385ba6eafb2f41d54fa986f987cdbf726f28d1c51",
+    "tests/test_cli.py": "89d44ec2fc94265371f20e4842e306e66e82ea896315f4978f4a4fc17e45fae8",
+    "tests/test_history.py": "d3ca4d9e6c15b6c7075374c3c4d95601e41a46f0e378635e218fae4d87105068",
+    "tests/test_language.py": "3663b8ecd13e299800b2d9b56f6ad389680e797fff94311fca5547282e244a8c",
+    "tests/test_replay.py": "f3d27922e91e8df7c15fee7986cfcb0a8abb3f3e4589a54b9c88602ce6be95c9",
+    "tests/test_transaction.py": "ac68db1e694be889cbab19a7d4a864acecca5080f4bd6332dfd5f1bc5bb893ca"
+  },
+  "format": "verimorph-evidence-1",
+  "hash_scope": "All repository files except this manifest and its Markdown rendering; excludes build/cache/generated local environments. Files are UTF-8 with LF preserved.",
+  "local_environment": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "local_python": "3.12.14",
+  "requirements": [
+    {
+      "acceptance_evidence": [
+        "scripts/package_smoke.py",
+        "docs/evidence/package-smoke.json"
+      ],
+      "criticality": "HARD",
+      "evidence": "isolated wheel install and CLI smoke",
+      "id": "A",
+      "requirement": "clean installation",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "pyproject.toml"
+    },
+    {
+      "acceptance_evidence": [
+        "tests/test_language.py",
+        "docs/evidence/test-results.txt"
+      ],
+      "criticality": "HARD",
+      "evidence": "language and metamorphic tests",
+      "id": "B",
+      "requirement": "specified integer language",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "language/runtime"
+    },
+    {
+      "acceptance_evidence": [
+        "tests/test_transaction.py::test_rejected_mutation_preserves_state_and_behavior",
+        "tests/test_transaction.py::test_malformed_ast_cannot_commit"
+      ],
+      "criticality": "HARD",
+      "evidence": "transaction and generated property tests",
+      "id": "C",
+      "requirement": "atomic AST mutation and rejection",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "kernel/mutation"
+    },
+    {
+      "acceptance_evidence": [
+        "tests/test_transaction.py::test_historical_objective_tampering_regression",
+        "tests/test_adversarial.py::test_no_host_or_legacy_capabilities"
+      ],
+      "criticality": "HARD",
+      "evidence": "adversarial trust tests",
+      "id": "D",
+      "requirement": "immutable trust/objective boundary",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "policy/oracle/verifier"
+    },
+    {
+      "acceptance_evidence": [
+        "tests/test_budget.py::test_recursive_evolve_never_receives_fresh_account",
+        "tests/test_budget.py::test_global_exhaustion"
+      ],
+      "criticality": "HARD",
+      "evidence": "nested EVOLVE/loop/recursion/output tests",
+      "id": "E",
+      "requirement": "hierarchical root resource control",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "budget/runtime/kernel"
+    },
+    {
+      "acceptance_evidence": [
+        "tests/test_replay.py::test_search_replay",
+        "tests/test_replay.py::test_same_seed_identical_histories_and_final",
+        "tests/test_replay.py::test_runtime_self_modification_pins_active_snapshot"
+      ],
+      "criticality": "HARD",
+      "evidence": "same-seed and altered-history tests",
+      "id": "F",
+      "requirement": "determinism and replay",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "replay/provenance"
+    },
+    {
+      "acceptance_evidence": [
+        "tests/test_replay.py::test_altered_history_detection",
+        "docs/evidence/seed42.jsonl",
+        "tests/test_adversarial.py::test_journal_failure_poisoning_prevents_later_commit"
+      ],
+      "criticality": "HARD",
+      "evidence": "JSONL integrity and CLI tests",
+      "id": "G",
+      "requirement": "inspectable bounded provenance",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "provenance/cli"
+    },
+    {
+      "acceptance_evidence": [
+        "tests/test_history.py::test_all_historical_failure_modes_reproduced",
+        "tests/test_adversarial.py",
+        "docs/evidence/failure-repair-ledger.json"
+      ],
+      "criticality": "HARD",
+      "evidence": "historical local reproducer and attack suite",
+      "id": "H",
+      "requirement": "historical failures and falsification",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "tests/history"
+    },
+    {
+      "acceptance_evidence": [
+        "scripts/package_smoke.py",
+        "docs/evidence/package-smoke.json"
+      ],
+      "criticality": "HARD",
+      "evidence": "build/CLI clean smoke",
+      "id": "I",
+      "requirement": "package/CLI",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "packaging/cli"
+    },
+    {
+      "acceptance_evidence": [
+        ".github/workflows/ci.yml",
+        "docs/evidence/ci.json"
+      ],
+      "criticality": "HARD",
+      "evidence": "observed GitHub Actions on final head",
+      "id": "J",
+      "requirement": "green CI",
+      "source": "USER",
+      "status": "UNVERIFIED",
+      "surface": "workflow"
+    },
+    {
+      "acceptance_evidence": [
+        "docs/evidence/FINAL_AUDIT.md",
+        "docs/research-position.md"
+      ],
+      "criticality": "HARD",
+      "evidence": "claims audit and primary prior-art references",
+      "id": "K",
+      "requirement": "accurate docs and research position",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "docs"
+    },
+    {
+      "acceptance_evidence": [
+        "THREAT_MODEL.md",
+        "tests/test_adversarial.py"
+      ],
+      "criticality": "HARD",
+      "evidence": "threat model and capability denial tests",
+      "id": "L",
+      "requirement": "explicit security limits",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "THREAT_MODEL.md"
+    },
+    {
+      "acceptance_evidence": [
+        "scripts/check_legacy.py",
+        "docs/evidence/legacy-reproduction.json"
+      ],
+      "criticality": "HARD",
+      "evidence": "byte hash comparison",
+      "id": "M",
+      "requirement": "unchanged original files",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "legacy"
+    },
+    {
+      "acceptance_evidence": [
+        "docs/evidence/FINAL_AUDIT.md",
+        "docs/evidence/failure-repair-ledger.json"
+      ],
+      "criticality": "HARD",
+      "evidence": "severity findings and repair ledger",
+      "id": "N",
+      "requirement": "cold final audit",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "docs/evidence"
+    },
+    {
+      "acceptance_evidence": [
+        "benchmarks/bench.py",
+        "docs/evidence/benchmark.json"
+      ],
+      "criticality": "HARD",
+      "evidence": "checked workload and measured environment/statistics",
+      "id": "O",
+      "requirement": "reproducible benchmark",
+      "source": "USER",
+      "status": "VERIFIED",
+      "surface": "benchmarks"
+    }
+  ],
+  "verdict": "CONDITIONAL \u2014 CI observation pending"
+}

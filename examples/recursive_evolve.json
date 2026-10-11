@@ -1,0 +1,39 @@
+{
+  "policy": {
+    "mutable_functions": [
+      "main"
+    ],
+    "operators": [
+      "literal"
+    ],
+    "literal_min": -1000000,
+    "literal_max": 1000000,
+    "allow_evolve": true,
+    "version": "policy-1"
+  },
+  "oracle": {
+    "cases": [
+      {
+        "args": [],
+        "target": 12,
+        "expected_output": null
+      }
+    ],
+    "minimum": -9223372036854775808,
+    "maximum": 9223372036854775807,
+    "version": "squared-error-1"
+  },
+  "limits": {
+    "steps": 100000,
+    "evaluations": 512,
+    "mutations": 256,
+    "compilations": 256,
+    "source_bytes": 1048576,
+    "ast_nodes": 65536,
+    "output_bytes": 16384,
+    "audit_events": 258,
+    "evaluation_depth": 8,
+    "call_depth": 32,
+    "wall_ms": 10000
+  }
+}

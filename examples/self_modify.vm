@@ -1,0 +1,2 @@
+FUNC value() { RETURN 5; }
+FUNC main(phase) { IF phase { EVOLVE 32; } RETURN value(); }

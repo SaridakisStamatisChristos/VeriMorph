@@ -1,0 +1,3 @@
+# Derives from the historical target x=5 approaching x=12.
+# Objective remains in the external kernel, never this program.
+FUNC main() { RETURN 5; }
