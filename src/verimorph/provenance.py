@@ -11,6 +11,7 @@ from .errors import VeriMorphError
 from .snapshots import canonical, digest
 
 MAX_LEDGER_BYTES = 8 * 1024 * 1024
+MAX_EVENT_BYTES = 256 * 1024
 MAX_EVENTS = 1026
 
 
@@ -27,8 +28,12 @@ class Ledger:
             raise VeriMorphError("provenance", "ledger closed")
         event = {"event_id": len(self._lines), "previous": self._hash, "payload": payload}
         checksum = digest(event)
-        line = canonical({**event, "hash": checksum}) + "\n"
-        size = len(line.encode())
+        event_text = canonical({**event, "hash": checksum})
+        encoded = event_text.encode("utf-8")
+        if len(encoded) > MAX_EVENT_BYTES:
+            raise VeriMorphError("provenance", "event too large")
+        line = event_text + "\n"
+        size = len(encoded) + 1
         if self._bytes + size > MAX_LEDGER_BYTES or len(self._lines) >= MAX_EVENTS:
             raise VeriMorphError("provenance", "ledger capacity exhausted")
         # I/O failure precedes both evidence state and commit; never overwrite history.
@@ -73,7 +78,7 @@ def decode(text: str, expected_anchor: str | None = None) -> tuple[dict[str, Any
     previous = "0" * 64
     events = []
     for i, line in enumerate(text.splitlines()):
-        if i >= MAX_EVENTS or len(line) > 262144:
+        if i >= MAX_EVENTS or len(line.encode("utf-8")) > MAX_EVENT_BYTES:
             raise VeriMorphError("provenance", "event limit")
         try:
             event = json.loads(
