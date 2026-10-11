@@ -36,6 +36,10 @@ See [SPEC.md](SPEC.md), [ARCHITECTURE.md](ARCHITECTURE.md),
 The original prototype is preserved byte-for-byte under `legacy/original-prototype`
 and is not imported by the installed runtime.
 
-Evidence status and acceptance verdict are maintained in the final audit and
-manifest. Claims are limited to declared language inputs under the trusted-host
+Evidence: **146 passing tests**, generated/adversarial regressions, strict typing,
+lint/format, clean wheel CLI installation, dependency audit, historical byte checks,
+seeded replay, and green CI on Python 3.11–3.14 Linux plus Python 3.12 Windows.
+[Final report](docs/evidence/REPORT.md), [evidence manifest](docs/evidence/MANIFEST.md),
+[final audit](docs/evidence/FINAL_AUDIT.md), and [measured benchmarks](docs/evidence/BENCHMARK.md)
+record the acceptance evidence and limits. Claims are limited to declared language inputs under the trusted-host
 model. Finite oracle cases do not establish correctness on every possible input.

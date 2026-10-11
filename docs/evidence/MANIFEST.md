@@ -1,6 +1,6 @@
 # Evidence manifest
 
-CONDITIONAL — CI observation pending
+VERIFIED FOR DECLARED LOCAL TARGET
 
 | Gate | State | Evidence |
 |---|---|---|
@@ -13,14 +13,14 @@ CONDITIONAL — CI observation pending
 | G inspectable bounded provenance | VERIFIED | tests/test_replay.py::test_altered_history_detection; docs/evidence/seed42.jsonl; tests/test_adversarial.py::test_journal_failure_poisoning_prevents_later_commit |
 | H historical failures and falsification | VERIFIED | tests/test_history.py::test_all_historical_failure_modes_reproduced; tests/test_adversarial.py; docs/evidence/failure-repair-ledger.json |
 | I package/CLI | VERIFIED | scripts/package_smoke.py; docs/evidence/package-smoke.json |
-| J green CI | UNVERIFIED | .github/workflows/ci.yml; docs/evidence/ci.json |
+| J green CI | VERIFIED | .github/workflows/ci.yml; docs/evidence/ci.json |
 | K accurate docs and research position | VERIFIED | docs/evidence/FINAL_AUDIT.md; docs/research-position.md |
 | L explicit security limits | VERIFIED | THREAT_MODEL.md; tests/test_adversarial.py |
 | M unchanged original files | VERIFIED | scripts/check_legacy.py; docs/evidence/legacy-reproduction.json |
 | N cold final audit | VERIFIED | docs/evidence/FINAL_AUDIT.md; docs/evidence/failure-repair-ledger.json |
 | O reproducible benchmark | VERIFIED | benchmarks/bench.py; docs/evidence/benchmark.json |
 
-File checksums: 78 files; see manifest.json. Self-reference exclusions are explicit.
+File checksums: 79 files; see manifest.json. Self-reference exclusions are explicit.
 Local Python: 3.12.14. Coverage: 92.81% including branches.
 
 Limitations: finite cases, trusted Python/OS, cooperative time accounting, no OS sandbox or formal proof, single-owner kernel. Research novelty and production qualification are not established.

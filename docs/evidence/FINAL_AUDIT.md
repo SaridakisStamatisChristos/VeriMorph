@@ -19,7 +19,8 @@ workflow commands, and documentation assertions.
   independent fault-injected path verifies sticky accounting after host stack failure.
 - MEDIUM: signed numeric canonicalization needed stable negative literal nodes.
   Fixed; generated arithmetic/roundtrip and MIN_INT tests verify behavior.
-- MEDIUM: Windows oversized fixture ID exceeded OS environment length before assertion. Compact IDs preserve the attack; corrected CI is required.
+- MEDIUM: Windows oversized fixture ID exceeded OS environment length before assertion. Compact IDs preserve the attack; corrected five-lane CI is green.
+- LOW: different-seed history assertion included seed header metadata. Strengthened to compare actual proposal sequences; full local suite passes.
 - INFORMATIONAL: no OS sandbox, no universal behavioral proof, unauthenticated
   hash chains without external anchor, cooperative deadlines, single-owner kernel,
   finite case overfitting. Explicit design limits, not hidden security claims.
@@ -28,7 +29,7 @@ workflow commands, and documentation assertions.
 
 Detailed reproducers/earliest invalidated phases are in failure-repair-ledger.json.
 No unresolved BLOCKER or HIGH code finding identified within the declared model.
-CI acceptance is pending observation and will be recorded separately on exact heads.
+CI acceptance is observed on Python 3.11–3.14 Linux and Python 3.12 Windows. Exact validated head/run/jobs are recorded in ci.json. The final evidence commit reruns the same workflow.
 Python/OS compatibility is claimed only where execution evidence exists.
 
 ## Unresolved issues

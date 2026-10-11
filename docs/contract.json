@@ -16,7 +16,7 @@
       "criticality": "HARD",
       "evidence": "isolated wheel install and CLI smoke",
       "surface": "pyproject.toml",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "B",
@@ -25,7 +25,7 @@
       "criticality": "HARD",
       "evidence": "language and metamorphic tests",
       "surface": "language/runtime",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "C",
@@ -34,7 +34,7 @@
       "criticality": "HARD",
       "evidence": "transaction and generated property tests",
       "surface": "kernel/mutation",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "D",
@@ -43,7 +43,7 @@
       "criticality": "HARD",
       "evidence": "adversarial trust tests",
       "surface": "policy/oracle/verifier",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "E",
@@ -52,7 +52,7 @@
       "criticality": "HARD",
       "evidence": "nested EVOLVE/loop/recursion/output tests",
       "surface": "budget/runtime/kernel",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "F",
@@ -61,7 +61,7 @@
       "criticality": "HARD",
       "evidence": "same-seed and altered-history tests",
       "surface": "replay/provenance",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "G",
@@ -70,7 +70,7 @@
       "criticality": "HARD",
       "evidence": "JSONL integrity and CLI tests",
       "surface": "provenance/cli",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "H",
@@ -79,7 +79,7 @@
       "criticality": "HARD",
       "evidence": "historical local reproducer and attack suite",
       "surface": "tests/history",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "I",
@@ -88,7 +88,7 @@
       "criticality": "HARD",
       "evidence": "build/CLI clean smoke",
       "surface": "packaging/cli",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "J",
@@ -97,7 +97,7 @@
       "criticality": "HARD",
       "evidence": "observed GitHub Actions on final head",
       "surface": "workflow",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "K",
@@ -106,7 +106,7 @@
       "criticality": "HARD",
       "evidence": "claims audit and primary prior-art references",
       "surface": "docs",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "L",
@@ -115,7 +115,7 @@
       "criticality": "HARD",
       "evidence": "threat model and capability denial tests",
       "surface": "THREAT_MODEL.md",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "M",
@@ -124,7 +124,7 @@
       "criticality": "HARD",
       "evidence": "byte hash comparison",
       "surface": "legacy",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "N",
@@ -133,7 +133,7 @@
       "criticality": "HARD",
       "evidence": "severity findings and repair ledger",
       "surface": "docs/evidence",
-      "status": "OPEN"
+      "status": "VERIFIED"
     },
     {
       "id": "O",
@@ -142,7 +142,7 @@
       "criticality": "HARD",
       "evidence": "checked workload and measured environment/statistics",
       "surface": "benchmarks",
-      "status": "OPEN"
+      "status": "VERIFIED"
     }
   ],
   "assumptions": [
@@ -193,5 +193,6 @@
     "OS sandbox": "N/A: not implemented or claimed",
     "formal proof": "N/A: verified means executable gates, not machine-checked proof",
     "cloud/auth/database": "N/A: local experimental runtime"
-  }
+  },
+  "final_evidence": "docs/evidence/manifest.json; final-head CI also observed in campaign response"
 }

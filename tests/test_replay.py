@@ -27,7 +27,17 @@ def test_same_seed_identical_histories_and_final():
     assert "RETURN 12;" in a.committed.source
     c = Kernel(SOURCE, seed=43)
     c.search(32)
-    assert a.ledger.lines != c.ledger.lines
+    proposals_a = [
+        json.loads(line)["payload"]["proposal"]
+        for line in a.ledger.lines
+        if json.loads(line)["payload"]["kind"] == "mutation"
+    ]
+    proposals_c = [
+        json.loads(line)["payload"]["proposal"]
+        for line in c.ledger.lines
+        if json.loads(line)["payload"]["kind"] == "mutation"
+    ]
+    assert proposals_a != proposals_c
 
 
 @given(st.integers(0, 2**64 - 1))

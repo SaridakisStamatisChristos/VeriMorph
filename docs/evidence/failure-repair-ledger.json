@@ -96,6 +96,17 @@
     "repair": "Assign compact descriptive parametrization IDs; retain exact oversized input and rejection assertion",
     "reproducer": "Actions run 38132063927 job 114448267118",
     "reverification": "local full suite and corrected five-lane CI",
-    "status": "PARTIAL until corrected CI observed"
+    "status": "VERIFIED: corrected five-lane CI green"
+  },
+  {
+    "id": "F10",
+    "severity": "LOW",
+    "phase": "VERIFY",
+    "failure": "Different-seed regression compared entire history, including seed metadata",
+    "cause": "Header difference alone could satisfy assertion without testing actual proposal paths",
+    "repair": "Compare actual proposal sequences from mutation events; independent two-run probe confirms divergence",
+    "reproducer": "test_same_seed_identical_histories_and_final",
+    "reverification": "replay suite and full local suite; final CI rerun",
+    "status": "VERIFIED: full local suite; final head CI independently reruns assertion"
   }
 ]

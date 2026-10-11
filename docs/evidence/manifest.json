@@ -49,7 +49,293 @@
     }
   ],
   "ci": {
-    "status": "UNVERIFIED"
+    "jobs": [
+      {
+        "conclusion": "success",
+        "id": 114448801971,
+        "name": "verify (3.11, ubuntu-latest)",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --require-hashes -r requirements-dev.lock"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --no-build-isolation --no-deps -e ."
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/verify.py"
+          },
+          {
+            "conclusion": "success",
+            "name": "Dependency audit"
+          },
+          {
+            "conclusion": "success",
+            "name": "Historical reproduction"
+          },
+          {
+            "conclusion": "success",
+            "name": "Deterministic CLI evidence"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 114448802022,
+        "name": "verify (3.12, windows-latest)",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --require-hashes -r requirements-dev.lock"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --no-build-isolation --no-deps -e ."
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/verify.py"
+          },
+          {
+            "conclusion": "success",
+            "name": "Dependency audit"
+          },
+          {
+            "conclusion": "success",
+            "name": "Historical reproduction"
+          },
+          {
+            "conclusion": "success",
+            "name": "Deterministic CLI evidence"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 114448802068,
+        "name": "verify (3.13, ubuntu-latest)",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --require-hashes -r requirements-dev.lock"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --no-build-isolation --no-deps -e ."
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/verify.py"
+          },
+          {
+            "conclusion": "success",
+            "name": "Dependency audit"
+          },
+          {
+            "conclusion": "success",
+            "name": "Historical reproduction"
+          },
+          {
+            "conclusion": "success",
+            "name": "Deterministic CLI evidence"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 114448802102,
+        "name": "verify (3.12, ubuntu-latest)",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --require-hashes -r requirements-dev.lock"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --no-build-isolation --no-deps -e ."
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/verify.py"
+          },
+          {
+            "conclusion": "success",
+            "name": "Dependency audit"
+          },
+          {
+            "conclusion": "success",
+            "name": "Historical reproduction"
+          },
+          {
+            "conclusion": "success",
+            "name": "Deterministic CLI evidence"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 114448802485,
+        "name": "verify (3.14, ubuntu-latest)",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --require-hashes -r requirements-dev.lock"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install --no-build-isolation --no-deps -e ."
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/verify.py"
+          },
+          {
+            "conclusion": "success",
+            "name": "Dependency audit"
+          },
+          {
+            "conclusion": "success",
+            "name": "Historical reproduction"
+          },
+          {
+            "conclusion": "success",
+            "name": "Deterministic CLI evidence"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job"
+          }
+        ]
+      }
+    ],
+    "prior_failure": {
+      "job_id": 114448267118,
+      "reason": "Oversized pytest parameter ID exceeded Windows environment limit; fixture now has compact IDs, rejection assertion preserved",
+      "run_id": 38132063927
+    },
+    "run_id": 38132249676,
+    "run_url": "https://github.com/SaridakisStamatisChristos/VeriMorph/actions/runs/38132249676",
+    "scope": "Observed five-lane CI on implementation/Windows repair head. Final evidence commit reruns identical workflow; runtime source unchanged, different-seed assertion strengthened and verified locally.",
+    "status": "VERIFIED",
+    "verified_head": "69c29bc9453d18ba3a52f798450fa5bf07621b69"
   },
   "claims": [
     {
@@ -124,7 +410,7 @@
     "MANIFEST.in": "a668439717b06a6215ed8fed7b23b62f223020587d8856b95056d69eb7be6172",
     "MUTATION_MODEL.md": "87f128b138cd06d854c2f503dc86d6f78dd115d66aa6762b8db50f69ba5635d0",
     "PROVENANCE.md": "b2250a94aa3571790dd4e10a9a851a9f9438a1a0bb0903613d17201f5c3773b8",
-    "README.md": "de7fb2935ecf2d1b6dba75fc192d1d73a923b1269ed8e4c82d35b732a24fd696",
+    "README.md": "b4c670dbbb02ea35362372a2f1e3d418a06a74e86beddc0845d2067ea80f887e",
     "SECURITY.md": "5aabeba0861d2e3637a883595725a36bef87ec03bf5a1905f6c237cf00238a8c",
     "SPEC.md": "602f8caf82b94f7f4133d6213e1993c0b184aa5a7aca8f3a6f2dd4a64e9b250c",
     "THREAT_MODEL.md": "5e600c77125020cfe792239f8193cc656a74937975a2fb7165aacd4014fb257b",
@@ -132,21 +418,22 @@
     "benchmarks/bench.py": "1b897a4a619d3d8226924ef51c6f658df0fe20ac5ec9ae12d4a6199866e1245a",
     "benchmarks/workload.vm": "180ba575044cd22b4aad4737f6c34266bfdf7d960307c80bef9494fb22d7b31d",
     "docs/PLAN.md": "a76557afaef855d14a92effeec4b279795686373f2148c0147483a0445ac095e",
-    "docs/contract.json": "cde8b9e0324537a6b66d0a1e8739542038e270cbe010ae2c9a5db08aa3b113f3",
+    "docs/contract.json": "942eb972575dde3dd38decd39e69af2203fb34e12554a9d3ce82d5065684588c",
     "docs/evidence/BENCHMARK.md": "52ced7156483ede44e06b80310046f69138eafaafe6ce6c504a44ce5c0474bb3",
-    "docs/evidence/FINAL_AUDIT.md": "84913a81dbb19d5d120db266516ea1062ae453bfe722d693e943658697e39883",
+    "docs/evidence/FINAL_AUDIT.md": "482b85d661ba789d377a2f254a19e8d064ac3dfd10e521f0af1a0038ff5de443",
     "docs/evidence/REPORT.md": "05b4d43ea6780ef27efe1668d569058779a829b7d48870e03306b5c24a108bc3",
     "docs/evidence/benchmark.json": "ea853ae7438846a3f3636f4b8a682caa5e3f6c4855be51049a5a4f98a31dc2f0",
-    "docs/evidence/coverage.json": "9d2820e8437800c65a7c2e5dd512360ae5019dc48141577cb41ec7b6c834a022",
+    "docs/evidence/ci.json": "fbb3d67adf303a5b54ddf3b40ccea741106894cf4a2111c9109061da6b321967",
+    "docs/evidence/coverage.json": "7a86693827d77d155deb6630cb4db14ee1f33c87bd1af46bc652d365a25d6c2c",
     "docs/evidence/coverage.txt": "e2eb1e648667a8389509720d233f80ede4ce714de01fc3f3feb28d47d063df2c",
     "docs/evidence/dependency-audit.json": "65478facbdb70700b639d426810dfb1494e34e810b271c7b6372b19827da32bd",
-    "docs/evidence/failure-repair-ledger.json": "2fa33001ccc92ac74b7dc39ff87fe4541c92f9c6f889c084ea25f3f1ac342093",
+    "docs/evidence/failure-repair-ledger.json": "25e04eabf3512ebd37991ee253e63c714a6bfbff6f56649d9feb7080e1f0b1a7",
     "docs/evidence/legacy-reproduction.json": "b11e5565f1da88b0be558f6485d87d421ff23ad06c140c71d8a72fc92d44ca4f",
-    "docs/evidence/package-reproducibility.json": "369e5acfdd6e4615b8623d883ff5485a5427db6d6ab642fb65827a20331f7fec",
+    "docs/evidence/package-reproducibility.json": "e08e8b801c41ec8c903f5ad0214f4af9945efe25aec5fe4364020fba987c68de",
     "docs/evidence/package-smoke.json": "b533e60076f06a4f9e0df2181ffdccfbf62adb73d9d6b0b122549aaebe940a20",
     "docs/evidence/seed42-summary.json": "98f2a686644dfb14518d79ffaa814a57e063d49946674b3d441d6189b2755b0b",
     "docs/evidence/seed42.jsonl": "9107e68d2aef226e76907156708c1e47668a33cac69ee005a2a55398007ae213",
-    "docs/evidence/test-results.txt": "ab6e24f64a20c9013d07c07047b2175a0736ddce7b93bf1675596a6faea8e875",
+    "docs/evidence/test-results.txt": "9c3ca03df8cd210d260dad51cea95def0d7883034e3cd5f19519ebaa55de0a65",
     "docs/history/original-prototype.md": "0e5a496227c5083ec6b81c8f13e39df5206de0fd3f8e850646223ab6beabc811",
     "docs/research-position.md": "6c801c6ab45e337473e6ab17267126f87a3b6b0919098ed75752ebc4985cf6df",
     "examples/basic.vm": "e0c0e413ac1a060c523f9d2f3063a0a8020f10a869fbe56a4d187ab4b8d163b7",
@@ -189,7 +476,7 @@
     "tests/test_cli.py": "89d44ec2fc94265371f20e4842e306e66e82ea896315f4978f4a4fc17e45fae8",
     "tests/test_history.py": "d3ca4d9e6c15b6c7075374c3c4d95601e41a46f0e378635e218fae4d87105068",
     "tests/test_language.py": "40169c390e19bc18a4a515ba7987c4ee6064c8ff5115ba6d91c7f70f416501f9",
-    "tests/test_replay.py": "f3d27922e91e8df7c15fee7986cfcb0a8abb3f3e4589a54b9c88602ce6be95c9",
+    "tests/test_replay.py": "1c6c898931792579233165b57ebb30b29d90d375ba317b593ce98f6235560b83",
     "tests/test_transaction.py": "ac68db1e694be889cbab19a7d4a864acecca5080f4bd6332dfd5f1bc5bb893ca"
   },
   "format": "verimorph-evidence-1",
@@ -327,7 +614,7 @@
       "id": "J",
       "requirement": "green CI",
       "source": "USER",
-      "status": "UNVERIFIED",
+      "status": "VERIFIED",
       "surface": "workflow"
     },
     {
@@ -396,5 +683,5 @@
       "surface": "benchmarks"
     }
   ],
-  "verdict": "CONDITIONAL \u2014 CI observation pending"
+  "verdict": "VERIFIED FOR DECLARED LOCAL TARGET"
 }

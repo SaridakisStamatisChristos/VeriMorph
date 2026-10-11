@@ -1,0 +1,289 @@
+{
+  "status": "VERIFIED",
+  "verified_head": "69c29bc9453d18ba3a52f798450fa5bf07621b69",
+  "run_id": 38132249676,
+  "run_url": "https://github.com/SaridakisStamatisChristos/VeriMorph/actions/runs/38132249676",
+  "jobs": [
+    {
+      "id": 114448801971,
+      "name": "verify (3.11, ubuntu-latest)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --require-hashes -r requirements-dev.lock",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --no-build-isolation --no-deps -e .",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python scripts/verify.py",
+          "conclusion": "success"
+        },
+        {
+          "name": "Dependency audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Historical reproduction",
+          "conclusion": "success"
+        },
+        {
+          "name": "Deterministic CLI evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 114448802022,
+      "name": "verify (3.12, windows-latest)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --require-hashes -r requirements-dev.lock",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --no-build-isolation --no-deps -e .",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python scripts/verify.py",
+          "conclusion": "success"
+        },
+        {
+          "name": "Dependency audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Historical reproduction",
+          "conclusion": "success"
+        },
+        {
+          "name": "Deterministic CLI evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 114448802068,
+      "name": "verify (3.13, ubuntu-latest)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --require-hashes -r requirements-dev.lock",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --no-build-isolation --no-deps -e .",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python scripts/verify.py",
+          "conclusion": "success"
+        },
+        {
+          "name": "Dependency audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Historical reproduction",
+          "conclusion": "success"
+        },
+        {
+          "name": "Deterministic CLI evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 114448802102,
+      "name": "verify (3.12, ubuntu-latest)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --require-hashes -r requirements-dev.lock",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --no-build-isolation --no-deps -e .",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python scripts/verify.py",
+          "conclusion": "success"
+        },
+        {
+          "name": "Dependency audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Historical reproduction",
+          "conclusion": "success"
+        },
+        {
+          "name": "Deterministic CLI evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 114448802485,
+      "name": "verify (3.14, ubuntu-latest)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --require-hashes -r requirements-dev.lock",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install --no-build-isolation --no-deps -e .",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python scripts/verify.py",
+          "conclusion": "success"
+        },
+        {
+          "name": "Dependency audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Historical reproduction",
+          "conclusion": "success"
+        },
+        {
+          "name": "Deterministic CLI evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "prior_failure": {
+    "run_id": 38132063927,
+    "job_id": 114448267118,
+    "reason": "Oversized pytest parameter ID exceeded Windows environment limit; fixture now has compact IDs, rejection assertion preserved"
+  },
+  "scope": "Observed five-lane CI on implementation/Windows repair head. Final evidence commit reruns identical workflow; runtime source unchanged, different-seed assertion strengthened and verified locally."
+}
